@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game-server
+  labels:
+    app: asteroids
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: asteroids
+  template:
+    metadata:
+      labels:
+        app: asteroids
+    spec:
+      containers:
+      - name: game-server
+        image: asteroids:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 3000
