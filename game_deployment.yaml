@@ -17,6 +17,7 @@ spec:
       containers:
       - name: game-server
         image: asteroids:latest
+        command: ["npm", "run", "start"]
         imagePullPolicy: Never
         ports:
         - containerPort: 3000
