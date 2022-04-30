@@ -1,12 +1,12 @@
 apiVersion: "agones.dev/v1"
 kind: GameServer
 metadata:
-  generateName: "simple-game-server-"
+  generateName: "game-server-"
 spec:
   ports:
   - name: default
     portPolicy: Dynamic
-    containerPort: 7654
+    containerPort: 3000
   template:
     spec:
       containers:
@@ -16,8 +16,8 @@ spec:
         imagePullPolicy: Never
         resources:
           requests:
-            memory: "64Mi"
-            cpu: "20m"
+            memory: "256Mi"
+            cpu: "500m"
           limits:
-            memory: "64Mi"
-            cpu: "20m"
+            memory: "256Mi"
+            cpu: "500m"
